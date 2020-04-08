@@ -1,0 +1,70 @@
+CREATE DATABASE urna;
+CREATE TABLE login(
+    id_usuario int not null PRIMARY KEY AUTO_INCREMENT,
+    usuario varchar(100) not null,
+    senha varchar(32) not null,
+    data_inclusao datetime DEFAULT CURRENT_TIMESTAMP
+);
+INSERT INTO login(usuario, senha) VALUES("usuario", "12345");
+CREATE TABLE cadastroeleitor(
+    id_eleitor int not null PRIMARY KEY AUTO_INCREMENT,
+    nomeEleitor varchar(100) not null,
+    cpf varchar(14) not null,
+    rg varchar(12) not null,
+    rua varchar(100) not null,
+    bairro varchar(100) not null,
+    cep varchar(9) not null,
+    numero varchar(5) not null,
+    data_inclusao datetime default CURRENT_TIMESTAMP
+    
+);
+CREATE TABLE direita(
+    id_candidato_direita int not null PRIMARY KEY AUTO_INCREMENT,
+    nome_candidato varchar(100) not null,
+    numero int not null,
+    cargo varchar(50) not null,
+    nome_candidato2 varchar(100) not null,
+    numero2 int not null,
+    cargo2 varchar(50) not null
+);
+INSERT INTO direita(nome_candidato, numero, cargo, nome_candidato2, numero2, cargo2) VALUES("Floriano Peixoto", 45, "Presidente", "Nilo Peçanha", 63, "Senador");
+CREATE TABLE esquerda(
+    id_candidato_esquerda int not null PRIMARY KEY AUTO_INCREMENT,
+    nome_candidato varchar(100) not null,
+    numero int not null,
+    cargo varchar(50) not null,
+    nome_candidato2 varchar(100) not null,
+    numero2 int not null,
+    cargo2 varchar(50) not null
+);
+INSERT INTO esquerda(nome_candidato, numero, cargo, nome_candidato2, numero2, cargo2) VALUES("Afonso Pena", 25, "Presidente", "Hermes da Fonseca", 84, "Senador");
+CREATE TABLE votosdir(
+    id_votos_dir int not null PRIMARY KEY AUTO_INCREMENT,
+    votos char(2) not null,
+    data_inclusao datetime DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE votosesq(
+    id_votos_esq int not null PRIMARY KEY AUTO_INCREMENT,
+    votos char(2) not null,
+    data_inclusao datetime DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE votosdir2(
+    id_votos_dir2 int not null PRIMARY KEY AUTO_INCREMENT,
+    votos char(2) NOT null,
+    data_inclusao datetime DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE votosesq2(
+    id_votos_esq2 int not null PRIMARY KEY AUTO_INCREMENT,
+    votos char(2) NOT null,
+    data_inclusao datetime DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE votosbrancos(
+    id_votos_brancos int not null PRIMARY KEY AUTO_INCREMENT,
+    votos char(2) NOT null,
+    data_inclusao datetime DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE votosbrancos2(
+    id_votos_brancos int not null PRIMARY KEY AUTO_INCREMENT,
+    votos char(2) NOT null,
+    data_inclusao datetime DEFAULT CURRENT_TIMESTAMP
+);
